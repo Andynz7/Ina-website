@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>INA — Những điều nhỏ bé</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="top"><nav class="nav">
+ <div class="logo"><span class="leaf">❧</span> INA</div>
+ <div class="links">
+  <a href="#home" data-i18n="nav.home">Trang chủ</a><a href="#products" data-i18n="nav.products">Sản phẩm</a><a href="#collection" data-i18n="nav.collection">Bộ sưu tập</a><a href="#posts" data-i18n="nav.journal">Bài viết</a><a href="#about" data-i18n="nav.about">Về Ina</a><a href="#contact" data-i18n="nav.contact">Liên hệ</a>
+ </div>
+ <div class="lang-switch"><button onclick="setLang('vi')">VI</button><button onclick="setLang('en')">EN</button><button onclick="setLang('zh')">中文</button></div><div class="icons"><button class="iconbtn" onclick="openSearch()" aria-label="Tìm kiếm">⌕</button><button class="iconbtn" onclick="openCart()" aria-label="Giỏ hàng">♧<span id="badge" class="badge">0</span></button></div>
+</nav></header>
+
+<main id="home">
+ <section class="hero hasimg">
+  <div class="hero-copy"><div class="eyebrow">INA</div><h1 data-i18n="hero.title">Những điều nhỏ bé,<br>làm ngày thường<br>trở nên <span class="script">đẹp hơn.</span></h1><button class="btn" onclick="document.querySelector('#products').scrollIntoView()"><span data-i18n="hero.cta">Khám phá sản phẩm →</span></button></div>
+ </section>
+
+ <div class="cats">
+  <button class="cat" onclick="filterProducts('all')"><div class="round">▦</div><small data-i18n="cat.all">Tất cả</small></button>
+  <button class="cat" onclick="filterProducts('new')"><div class="round">✦</div><small data-i18n="cat.new">Sản phẩm mới</small></button>
+  <button class="cat" onclick="filterProducts('hot')"><div class="round">♨</div><small data-i18n="cat.hot">Bán chạy</small></button>
+  <button class="cat" onclick="filterProducts('gift')"><div class="round">♧</div><small data-i18n="cat.gift">Quà tặng</small></button>
+  <button class="cat" onclick="filterProducts('home')"><div class="round">⌂</div><small data-i18n="cat.home">Trang trí nhà</small></button>
+  <button class="cat" onclick="filterProducts('personal')"><div class="round">⌁</div><small data-i18n="cat.personal">Đồ dùng cá nhân</small></button>
+ </div>
+
+ <section id="products"><div class="sectionhead"><div><h2 data-i18n="products.title">Sản phẩm mới</h2><div class="muted">Những sản phẩm được chọn lọc, mang đến trải nghiệm tốt nhất cho bạn.</div></div><button class="btn mini" onclick="filterProducts('all')"><span data-i18n="common.viewAll">Xem tất cả →</span></button></div>
+  <div id="productGrid" class="grid"></div>
+  <div id="collection" class="wide"><div class="copy"><div class="eyebrow">BỘ SƯU TẬP MÙA THU</div><h2>Sống chậm hơn<br>cùng những điều giản dị</h2><div class="muted">Khám phá bộ sưu tập mới với những sản phẩm mang hơi thở của thiên nhiên và sự ấm áp trong từng khoảnh khắc.</div><br><button class="btn" onclick="openInfo('Bộ sưu tập mùa thu','Một không gian nhỏ để bạn chọn những món đồ dịu dàng cho mùa mới.')">Xem bộ sưu tập →</button></div></div>
+ </section>
+
+ <section id="posts"><div class="sectionhead"><div><h2 data-i18n="journal.title">Bài viết gần đây</h2><div class="muted">Những chia sẻ nhỏ, nguồn cảm hứng lớn mỗi ngày.</div></div><button class="btn mini" onclick="openInfo('Bài viết INA','Khu vực này sẽ là nơi bạn đăng các câu chuyện, hướng dẫn và nội dung thương hiệu.')"><span data-i18n="common.viewAll">Xem tất cả →</span></button></div>
+  <div class="posts">
+   <article class="post" onclick="openInfo('5 món đồ nhỏ giúp căn phòng trở nên ấm áp hơn','Một vài gợi ý đơn giản để tạo nên một góc sống thật dễ chịu.')"><div class="postimg">⌂</div><div class="postbody"><h3>5 món đồ nhỏ giúp căn phòng trở nên ấm áp hơn</h3><div class="date">12.08.2025 · Đời sống</div></div></article>
+   <article class="post" onclick="openInfo('Gợi ý quà tặng cho người bạn yêu thương','Chọn một món quà tinh tế và để lời yêu thương được nói thay.')"><div class="postimg">♧</div><div class="postbody"><h3>Gợi ý quà tặng cho người bạn yêu thương</h3><div class="date">08.08.2025 · Quà tặng</div></div></article>
+   <article class="post" onclick="openInfo('Câu chuyện phía sau mỗi sản phẩm của Ina','Mỗi sản phẩm đều bắt đầu từ một ý tưởng nhỏ và sự chăm chút.')"><div class="postimg">☕</div><div class="postbody"><h3>Câu chuyện phía sau mỗi sản phẩm của Ina</h3><div class="date">05.08.2025 · Thương hiệu</div></div></article>
+   <article class="post" onclick="openInfo('Một ngày bình thường cùng Ina','Những khoảnh khắc chậm rãi, nhẹ nhàng và rất đời thường.')"><div class="postimg">☼</div><div class="postbody"><h3>Một ngày bình thường cùng Ina</h3><div class="date">01.08.2025 · Cuộc sống</div></div></article>
+  </div>
+ </section>
+
+ <section id="about" class="about"><div class="aboutin"><div class="aboutimg">INA</div><div><div class="eyebrow">VỀ INA</div><h2>Ina được tạo nên từ những điều giản dị.</h2><div class="muted">Chúng mình tin rằng một sản phẩm đẹp không chỉ nằm ở hình dáng, mà còn ở cảm giác nó mang lại trong những khoảnh khắc rất đời thường.</div><br><button class="btn" onclick="openInfo('Về INA','INA hướng tới một trải nghiệm mua sắm nhẹ nhàng, tinh tế và gần gũi.')">Tìm hiểu thêm →</button></div></div></section>
+</main>
+
+<footer id="contact"><div class="foot">
+ <div><div class="logo">❧ INA</div><p class="muted">Những điều nhỏ bé, làm ngày thường trở nên đẹp hơn.</p></div>
+ <div><h4>Hỗ trợ khách hàng</h4><a href="#">Chính sách mua hàng</a><a href="#">Vận chuyển</a><a href="#">Đổi trả</a></div>
+ <div><h4>Về Ina</h4><a href="#about">Câu chuyện thương hiệu</a><a href="#">Tuyển dụng</a><a href="#contact" data-i18n="nav.contact">Liên hệ</a></div>
+ <div><h4>Theo dõi chúng tôi</h4><a href="#">Facebook</a><a href="#">Instagram</a><a href="#">TikTok</a></div>
+</div><div class="copyright">© 2026 INA. All rights reserved. · Simple things. Better days.</div></footer>
+
+<div id="drawer" class="drawer"><div class="shade" onclick="closeCart()"></div><aside class="panel"><div class="panelhead"><h2>Giỏ hàng</h2><button class="close" onclick="closeCart()">×</button></div><div id="cart"></div><div id="cartFooter"></div></aside></div>
+<div id="modal" class="modal" onclick="if(event.target===this)closeModal()"><div class="modalbox"><button class="close" style="float:right" onclick="closeModal()">×</button><div id="modalContent"></div></div></div>
+  <script src="js/app.js"></script>
+</body>
+</html>
